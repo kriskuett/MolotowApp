@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
+import MenuPage from './pages/menuPage';
+import GamePage from './pages/GamePage';
 
 interface Forecast {
     date: string;
@@ -39,11 +42,18 @@ function App() {
         </table>;
 
     return (
-        <div>
-            <h1 id="tableLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
+        <BrowserRouter>
+            <nav>
+                <ul>
+                    <li><Link to="/">Menu Page</Link></li>
+                    <li><Link to="/game">Game Page</Link></li>
+                </ul>
+            </nav>
+            <Routes>
+                <Route path="/" element={<MenuPage />} />
+                <Route path="/game" element={<GamePage />} />
+            </Routes>
+        </BrowserRouter>
     );
 
     async function populateWeatherData() {
