@@ -12,7 +12,7 @@ function App() {
     const [forecasts, setForecasts] = useState<Forecast[]>();
 
     useEffect(() => {
-        populateWeatherData();
+        //populateWeatherData();
     }, []);
 
     const contents = forecasts === undefined
