@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MolotowApp.Server.Controllers
 {
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
